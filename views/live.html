@@ -4,6 +4,14 @@
 		<title>Live Test</title>
 		<link href="https://vjs.zencdn.net/7.7.5/video-js.css" rel="stylesheet" />
 		<script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/videojs-flash@2/dist/videojs-flash.min.js"></script>
+		<script>
+			videojs.options.flash.swf = "//vjs.zencdn.net/4.12/video-js.swf";
+
+			videojs("example_video_1", {
+				techOrder: ["flash", "html5"]
+			});
+		</script>
 	</head>
 	<body>
 		<video
@@ -13,10 +21,9 @@
 			preload="auto"
 			width="640"
 			height="264"
-			poster="MY_VIDEO_POSTER.jpg"
-			data-setup='{ "techorder" : ["flash", "html5"] }'
+			data-setup='{ }'
 		>
-			<source src="rtmp://seanjewell.com/myapp/test" type='rtmp/mp4' />
+			<source src="http://seanjewell.com/hls/test.m3u8" type="application/x-mpegURL" />
 		</video>
 
 		<script src="https://vjs.zencdn.net/7.7.5/video.js"></script>
